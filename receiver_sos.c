@@ -43,7 +43,7 @@ int main() {
     options.c_cflag &= ~CSTOPB;
     options.c_cflag &= ~CSIZE;
     options.c_cflag |= CS8;
-    options.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG); // disable ICANON, don't need to wait for '\n'
+    options.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG); // disable ICANON, so that we don't need to wait for '\n'
     options.c_oflag &= ~OPOST;
 
     tcsetattr(fd, TCSANOW, &options);
